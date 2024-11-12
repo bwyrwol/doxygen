@@ -1,0 +1,22 @@
+/**
+  * @brief Definicja typu strukturalnego opisującego współrzędne punktu
+  *
+  * Struktura składa się z dwóch pól @a x oraz @a y, opisujących współrzędne
+  * położenia punktu na płaszczyźnie. Za pomocą słowa kluczowego typedef
+  * utworzono nowy typ COORDINATE T; bez tego każda definicja zmiennej miałaby
+  * postać
+  * <pre>
+  * struct coordinate point;
+  * </pre>
+  * W tym przykładzie typ strukturalny COORDINATE T pozwala wprost zdefiniować
+  * zmienną
+  * <pre>
+  * COORDINATE T point;
+  * </pre>
+  */
+typedef struct coordinate {
+uint8 t x, ///< współrzędna x
+uint8 t y ///< współrzędna y
+          ///< zmienne 8-bitowe wykorzystane do obsługi wyświetlacza LCD
+          ///< o maksymalnych rozmiarach 128x64 punkty
+} COORDINATE T;
