@@ -1,0 +1,33 @@
+/**
+  * @brief Przykład typu wyliczeniowego
+  *
+  * Tutaj bardziej szczegółowy opis np.: Za pomocą tego typu można
+  * zdefiniować zmienną typu "enum Dzien Tygodnia".
+  * Przykład:
+  * <pre>
+  * enum Dzien Tygodnia moj tydzien = Sroda;
+  * </pre>
+  */
+enum Dzien Tygodnia {
+Poniedzialek, ///< tutaj można skomentować kolejne wartości
+Wtorek, ///< drugi dzień
+Sroda, ///< trzeci dzień
+Czwartek,
+Piatek,
+Sobota, ///< początek weekendu
+Niedziela
+};
+
+/**
+  * @brief Status przycisku klawiatury (SET or RESET)
+  *
+  * Za pomocą definicji typu wyliczeniowego można utworzyć zmienne typu
+  * USER BUTTON STATUS T
+  * Przykład definicji zmiennej:
+  * <pre>
+  * USER BUTTON STATUS T KeyUp = RESET;
+  * </pre>
+  */
+typedef enum {SET,   ///< przycisk naciśnięty
+              RESET  ///< przycisk nie naciśnięty
+} USER BUTTON STATUS T;
