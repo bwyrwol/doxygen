@@ -25,3 +25,29 @@
  * szerokości znaku) można użyć sekwencji @code{.c}...@endcode.
  * </pre>
  */
+
+/**
+  * (...)
+  *
+  * @note Najbardziej ogólny znacznik pozwalający zwrócić uwagę na
+  *       informacje opisane w tej sekcji
+  *
+  * @attention Ważna notatka, na którą należy zwrócić szczególną uwagę
+  *
+  * @warning Ostrzeżenie w formie notatki, pozwalające zwrócić uwagę na aspekty
+  *          np. błędnego wykorzystania fragmentów kodu lub funkcji (niezgodny format
+  *          argumentów, rozmiar i zakres zmiennych itp.)
+  *
+  * @remark Uwaga o niewielkim znaczeniu
+  *
+  * @todo Zwykle wykorzystywany do zasygnalizowania niedokończonych fragmentów
+  *       kodu i konieczności jego uzupełnienia w kolejnych wersjach, zmianach
+  *       jakie należy wprowadzić (kierunki dalszych prac). W przypadku tego
+  *       znacznika możliwe jest zgrupowanie wszystkich elementów ToDo w jednej
+  *       sekcji całego dokumentu, a nie tylko w miejscu wystąpienia
+  *
+  * @bug Wykorzystywany do sygnalizowania występujących błędów w oprogramowaniu,
+  *      które w obecnej wersji są trudne do zlokalizowania i usunięcia.
+  *      W przypadku tego znacznika możliwe jest zgrupowanie wszystkich blędów
+  *      w jednej sekcji całego dokumentu
+  */
