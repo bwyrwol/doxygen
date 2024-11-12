@@ -1,0 +1,29 @@
+/**
+  * @brief Dodanie stałej do każdego elementu tablicy
+  *
+  * Funkcja dodaje stałą wartość do każdego elementu tablicy. Szczegółowy opis
+  * ma określać dokładnie, jakie zadanie ma realizować funkcja oraz opisywać
+  * interfejs funkcji (parametry wejściowe, wyjściowe oraz zwracany wynik), tak
+  * by mogła być wykorzystana nawet bez dostępu do kodu źródłowego.
+  *
+  * @param[in,out] ptr wskaźnik do tablicy
+  * @param[in] value wartość, o którą zostaną zwiększone elementy tablicy
+  *            @a ptr[i]
+  * @param[in] length liczba elementów tablicy wskazywanej przez @a ptr.
+  * @returns zwraca wartość 0 przy poprawnie wykonanej operacji,
+  *          w razie wystąpienia błędu zwraca wartość różną od 0
+  *
+  * Przykład wykorzystania:
+  * <pre>
+  * #define TABSIZE 10
+  * uint8 t table[TABSIZE];
+  * ...
+  * if (add value(table, 5, TABSIZE) != 0)
+  * {
+  *   // ERROR
+  * }
+  * </pre>
+  */
+int add value( float *ptr,   // wskaźnik do tablicy
+               float value,  // wartość o jaką będą zwiększone poszczególne elementy
+               int length);  // liczba elementów tablicy
