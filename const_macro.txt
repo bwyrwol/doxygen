@@ -1,0 +1,21 @@
+// komentarz w pojedynczej linii kodu
+#define NUMSAMPLES 1000 ///< liczba próbek w buforze
+
+// blok komentarza ze skróconym oraz rozszerzonym opisem
+/**
+  * @brief Wyznaczenie wartości maksymalnej dwóch liczb @a x and @a y
+  * W opisie skróconym podano argumenty makra (x, y) sformatowane za pomocą
+  * znacznika @a (czcionka pochyła). Można stosować inne formatowania znaków jak:
+  * @b (czcionka pogrubiona) lub @c (czcionka maszynowa).
+  *
+  * Tutaj można zamieścić rozszerzone informacje na temat makra. Każdy akapit
+  * należy rozdzielić pustą linią. Przyjmuje się, że po bloku komentarza nie
+  * wstawia się pustych linii tylko zamieszcza element dokumentowany (tutaj jest
+  * to makro)
+  *
+  * Przykład użycia
+  * <pre>
+  * uint8 t maximum = MAX(5, 10);
+  * </pre>
+  */
+#define MAX(x, y) ((x)>(y)?(x):(y))
