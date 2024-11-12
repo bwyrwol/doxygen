@@ -1,0 +1,27 @@
+/**
+ *
+ * @file Opcjonalnie, nazwa pliku wraz z rozszerzeniem
+ *
+ * @brief Krótki opis zawartości pliku
+ *
+ * @author Informacja o autorze (imię, nazwisko lub inicjały)
+ *
+ * @date Data utworzenia lub zakończenia prac nad modułem
+ *
+ * @copyright Informacja o prawach autorskich
+ *
+ * Bardziej szczegółowy opis zawartości pliku, można tutaj zawrzeć informacje
+ * odnośnie przeznaczenia modułu (np. biblioteka do obsługi interfejsu SPI),
+ * platformy dla jakiej został opracowany (np. AVR, ARM, ...), szczegółów
+ * implementacyjnych itp.
+ * Akapity w komentarzach są oznaczone pustą linią w bloku, z wyjątkiem
+ * opcjonalnego znaku ’*’ na początku wiersza (pomijanego w dokumentacji).
+ *
+ * <pre>
+ * W tym miejscu można zamieścić fragmenty kodu np. ilustrujące jak wywołać
+ * funkcję, dołączyć plik nagłówkowy czy zdefiniować stałe, wymagane dla
+ * poprawnego działania funkcji zdefiniowanych w module (bibliotece).
+ * Zamiast znaczników <pre>...</pre> (kod formatowany czcionką o stałej
+ * szerokości znaku) można użyć sekwencji @code{.c}...@endcode.
+ * </pre>
+ */
