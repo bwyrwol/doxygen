@@ -1,0 +1,173 @@
+\doxysection{Dokumentacja pliku Sys\+Timer/systimer.h}
+\hypertarget{systimer_8h}{}\label{systimer_8h}\index{SysTimer/systimer.h@{SysTimer/systimer.h}}
+
+
+Plik naglowkowy biblioteki Sys\+Timer.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\newline
+Wykres zależności załączania dla systimer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{systimer_8h__incl}
+\end{center}
+\end{figure}
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{systimer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{systimer_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}~14745600\+UL
+\begin{DoxyCompactList}\small\item\em Definicja czestotliwosci F\+\_\+\+CPU. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{systimer_8h_a8a64152a767d1b6adeabe5d285552d8e}{SYSTIMER\+\_\+\+NO\+\_\+\+ERROR}}~0
+\begin{DoxyCompactList}\small\item\em Licznik skonfigurowany poprawnie. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{systimer_8h_a4f8652a3c9faffaaaa58da37b0f6b821}{SYSTIMER\+\_\+\+ERROR\+\_\+1}}~1
+\begin{DoxyCompactList}\small\item\em Licznik nie bedzie dokladnie odmierzac czasu. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{systimer_8h_a289bae41cb0351bdbec9f06416453742}{SYSTIMER\+\_\+\+ERROR\+\_\+2}}~2
+\begin{DoxyCompactList}\small\item\em Nie udalo sie skonfigurowac licznika. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{systimer_8h_ae3404ce9abc1306c155ab95ccffe8480}{systimer\+\_\+init}} (uint16\+\_\+t systick)
+\begin{DoxyCompactList}\small\item\em Funkcja pozwalajaca skonfigurowac licznik Timer1 tak by pozwalal na generacje przerwania o okreslony czas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{systimer_8h_a9964c00826959584d40ed079a871045f}{systimer\+\_\+callback}} (void) \+\_\+\+\_\+attribute\+\_\+\+\_\+((weak))
+\begin{DoxyCompactList}\small\item\em Funkcja wywolywana w programie obslugi przerwania od Timer1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Plik naglowkowy biblioteki Sys\+Timer. 
+
+W bibliotece zawarte zostaly podstawowe funkcji pozwalajace skonfigurowac licznik Timer 1 mikrokontrolera w trybie CTC umozliwiajac generowanie przerwania co okreslony interwal czasu (system tick).
+
+\begin{DoxyNote}{Nota}
+wersja testowa 
+\end{DoxyNote}
+
+
+Definicja w pliku \mbox{\hyperlink{systimer_8h_source}{systimer.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja definicji}
+\Hypertarget{systimer_8h_a43bafb28b29491ec7f871319b5a3b2f8}\index{systimer.h@{systimer.h}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!systimer.h@{systimer.h}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \label{systimer_8h_a43bafb28b29491ec7f871319b5a3b2f8} 
+\#define F\+\_\+\+CPU~14745600\+UL}
+
+
+
+Definicja czestotliwosci F\+\_\+\+CPU. 
+
+
+
+Definicja w linii \mbox{\hyperlink{systimer_8h_source_l00023}{23}} pliku \mbox{\hyperlink{systimer_8h_source}{systimer.\+h}}.
+
+\Hypertarget{systimer_8h_a4f8652a3c9faffaaaa58da37b0f6b821}\index{systimer.h@{systimer.h}!SYSTIMER\_ERROR\_1@{SYSTIMER\_ERROR\_1}}
+\index{SYSTIMER\_ERROR\_1@{SYSTIMER\_ERROR\_1}!systimer.h@{systimer.h}}
+\doxysubsubsection{\texorpdfstring{SYSTIMER\_ERROR\_1}{SYSTIMER\_ERROR\_1}}
+{\footnotesize\ttfamily \label{systimer_8h_a4f8652a3c9faffaaaa58da37b0f6b821} 
+\#define SYSTIMER\+\_\+\+ERROR\+\_\+1~1}
+
+
+
+Licznik nie bedzie dokladnie odmierzac czasu. 
+
+
+
+Definicja w linii \mbox{\hyperlink{systimer_8h_source_l00028}{28}} pliku \mbox{\hyperlink{systimer_8h_source}{systimer.\+h}}.
+
+\Hypertarget{systimer_8h_a289bae41cb0351bdbec9f06416453742}\index{systimer.h@{systimer.h}!SYSTIMER\_ERROR\_2@{SYSTIMER\_ERROR\_2}}
+\index{SYSTIMER\_ERROR\_2@{SYSTIMER\_ERROR\_2}!systimer.h@{systimer.h}}
+\doxysubsubsection{\texorpdfstring{SYSTIMER\_ERROR\_2}{SYSTIMER\_ERROR\_2}}
+{\footnotesize\ttfamily \label{systimer_8h_a289bae41cb0351bdbec9f06416453742} 
+\#define SYSTIMER\+\_\+\+ERROR\+\_\+2~2}
+
+
+
+Nie udalo sie skonfigurowac licznika. 
+
+
+
+Definicja w linii \mbox{\hyperlink{systimer_8h_source_l00029}{29}} pliku \mbox{\hyperlink{systimer_8h_source}{systimer.\+h}}.
+
+\Hypertarget{systimer_8h_a8a64152a767d1b6adeabe5d285552d8e}\index{systimer.h@{systimer.h}!SYSTIMER\_NO\_ERROR@{SYSTIMER\_NO\_ERROR}}
+\index{SYSTIMER\_NO\_ERROR@{SYSTIMER\_NO\_ERROR}!systimer.h@{systimer.h}}
+\doxysubsubsection{\texorpdfstring{SYSTIMER\_NO\_ERROR}{SYSTIMER\_NO\_ERROR}}
+{\footnotesize\ttfamily \label{systimer_8h_a8a64152a767d1b6adeabe5d285552d8e} 
+\#define SYSTIMER\+\_\+\+NO\+\_\+\+ERROR~0}
+
+
+
+Licznik skonfigurowany poprawnie. 
+
+
+
+Definicja w linii \mbox{\hyperlink{systimer_8h_source_l00027}{27}} pliku \mbox{\hyperlink{systimer_8h_source}{systimer.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{systimer_8h_a9964c00826959584d40ed079a871045f}\index{systimer.h@{systimer.h}!systimer\_callback@{systimer\_callback}}
+\index{systimer\_callback@{systimer\_callback}!systimer.h@{systimer.h}}
+\doxysubsubsection{\texorpdfstring{systimer\_callback()}{systimer\_callback()}}
+{\footnotesize\ttfamily \label{systimer_8h_a9964c00826959584d40ed079a871045f} 
+void systimer\+\_\+callback (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja wywolywana w programie obslugi przerwania od Timer1. 
+
+Funkcja obslugi przerwania od porownania licznika Timer1. Zawiera wywolanie tzw. funkcji zwrotnej, ktora zdefiniowana w aplikacji bedzie wywolywana cyklicznie co czas {\ttfamily systick}. 
+
+Definicja w linii \mbox{\hyperlink{main_8c_source_l00014}{14}} pliku \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{systimer_8h_ae3404ce9abc1306c155ab95ccffe8480}\index{systimer.h@{systimer.h}!systimer\_init@{systimer\_init}}
+\index{systimer\_init@{systimer\_init}!systimer.h@{systimer.h}}
+\doxysubsubsection{\texorpdfstring{systimer\_init()}{systimer\_init()}}
+{\footnotesize\ttfamily \label{systimer_8h_ae3404ce9abc1306c155ab95ccffe8480} 
+uint8\+\_\+t systimer\+\_\+init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{systick}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja pozwalajaca skonfigurowac licznik Timer1 tak by pozwalal na generacje przerwania o okreslony czas. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em systick} & watrosc czasu podana w \mbox{[}ms\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+zwraca kod okreslajacy, czy licznik udalo sie poprawnie skonfigurowac i z jaka dokladnoscia bedzie odmierzany czas
+\end{DoxyReturn}
+Przyklad wykorzystania 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{systimer_8h}{systimer.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ main(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}{systimer\_init}}(100);\ \textcolor{comment}{//\ odmierzany\ interwal\ czasu\ 100ms}}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_aa65a9752fa834bd4e970a0751afc546b}{systimer\_callback}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ tutaj\ wpisac\ instrukcje,\ ktore\ beda\ wykonywane\ co\ 100ms}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definicja w linii \mbox{\hyperlink{systimer_8c_source_l00023}{23}} pliku \mbox{\hyperlink{systimer_8c_source}{systimer.\+c}}.
+

@@ -1,0 +1,30 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\index{SysTimer/main.c@{SysTimer/main.c}}
+\mbox{\hyperlink{main_8c}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}\mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{00011}}\ \textcolor{preprocessor}{\#define\ F\_CPU\ 14745600UL\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{systimer_8h}{systimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}\mbox{\hyperlink{main_8c_aa65a9752fa834bd4e970a0751afc546b}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_aa65a9752fa834bd4e970a0751afc546b}{systimer\_callback}}(\textcolor{keywordtype}{void})\ \textcolor{comment}{/*\ wywolanie\ funkcji\ callback\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \ \ PORTD\ \string^=\ 0b11000000;\ \textcolor{comment}{/*\ przy\ kazdym\ wywolaniu\ negowane\ sa\ bity\ PD7\ i\ PD6\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \ \ DDRD\ |=\ 0b11000000;\ \textcolor{comment}{/*\ dla\ testow\ wykorzystane\ zostana\ wyprowadzenia\ PD7\ i\ PD6\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ \ \ PORTD\ |=\ 0b11000000;\ \textcolor{comment}{/*\ mozna\ do\ nich\ podlaczyc\ np.\ diody\ LED\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025\ \ \ \mbox{\hyperlink{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}{systimer\_init}}(231);\ \textcolor{comment}{/*\ wywolanie\ funkcji\ inicjalizujacej\ SysTimer\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ przykladowa\ wartoscia\ (okresla\ co\ jaki\ czas\ w\ ms}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wywolywana\ bedzie\ funkcja\ systimer\_callback())\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ \ \ \textcolor{keywordflow}{while}\ (1)\ \textcolor{comment}{/*\ petla\ nieskonczona\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \}}
+
+\end{DoxyCode}

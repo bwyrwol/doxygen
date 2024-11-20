@@ -1,0 +1,46 @@
+\doxysection{systimer.\+c}
+\hypertarget{systimer_8c_source}{}\label{systimer_8c_source}\index{SysTimer/systimer.c@{SysTimer/systimer.c}}
+\mbox{\hyperlink{systimer_8c}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{systimer_8h}{systimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00021}\mbox{\hyperlink{systimer_8c_a9c5bf500e7587316dfee0f4f05553b3f}{00021}}\ \textcolor{keyword}{const}\ uint16\_t\ prescaler\_div[5]\ \mbox{\hyperlink{systimer_8c_a9c5bf500e7587316dfee0f4f05553b3f}{PROGMEM}}\ =\ \{1,\ 8,\ 64,\ 256,\ 1024\};}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00023}\mbox{\hyperlink{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}{00023}}\ uint8\_t\ \mbox{\hyperlink{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}{systimer\_init}}(uint16\_t\ systick)}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00025}00025\ \ \ uint64\_t\ \_OCR1A;}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00026}00026\ \ \ uint8\_t\ \ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00027}00027\ \ \ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00028}00028\ \ \ \textcolor{comment}{/*\ wyszukiwanie\ wartosci\ dzielnika\ */}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00029}00029\ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00030}00030\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00031}00031\ \ \ \ \ \_OCR1A\ =\ (((\mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\_CPU}}\ /\ pgm\_read\_word(\&prescaler\_div[index])))\ *\ systick)\ /\ 1000ULL;}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00032}00032\ \ \ \}\ \textcolor{keywordflow}{while}\ ((\_OCR1A\ >\ 65535)\ \&\&\ (index++\ <\ 5));}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00033}00033\ \ \ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00034}00034\ \ \ \textcolor{comment}{/*\ sprawdzenie\ jak\ dokladnie\ udalo\ sie\ dobrac\ parametry\ licznika\ */}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00035}00035\ \ \ uint8\_t\ error\_code\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00036}00036\ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ 5)}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00037}00037\ \ \ \ \ error\_code\ =\ \mbox{\hyperlink{systimer_8h_a289bae41cb0351bdbec9f06416453742}{SYSTIMER\_ERROR\_2}};\ \textcolor{comment}{/*\ nie\ udalo\ sie\ znalezc\ dzielnika\ prescalera\ do\ odmierzania\ czasu\ */}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00038}00038\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (((((\mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\_CPU}}\ /\ pgm\_read\_word(\&prescaler\_div[index])))\ *\ systick)\ /\ 1000ULL)\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00039}00039\ \ \ \ \ error\_code\ =\ \mbox{\hyperlink{systimer_8h_a4f8652a3c9faffaaaa58da37b0f6b821}{SYSTIMER\_ERROR\_1}};\ \textcolor{comment}{/*\ dla\ podanych\ wartosci\ czas\ odmierzany\ z\ przyblizeniem\ */}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00040}00040\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00041}00041\ \ \ \ \ error\_code\ =\ \mbox{\hyperlink{systimer_8h_a8a64152a767d1b6adeabe5d285552d8e}{SYSTIMER\_NO\_ERROR}};\ \textcolor{comment}{/*\ licznik\ skonfigurowany\ poprawnie*/}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00042}00042\ \ \ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00043}00043\ \ \ \textcolor{keywordflow}{if}\ (error\_code\ <\ \mbox{\hyperlink{systimer_8h_a289bae41cb0351bdbec9f06416453742}{SYSTIMER\_ERROR\_2}})\ \textcolor{comment}{/*\ wlasciwa\ konfiguracja\ licznika\ Timer1\ */}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00044}00044\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00045}00045\ \ \ \ \ OCR1A\ =\ (uint16\_t)\ \_OCR1A;}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00046}00046\ \ \ \ \ TIMSK\ |=\ (1\ <<\ OCIE1A);\ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00047}00047\ \ \ \ \ sei();}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00048}00048\ \ \ \ \ TCCR1B\ =\ (1\ <<\ WGM12)\ |\ (index\ +\ 1);\ \textcolor{comment}{/*\ start\ timer\ at\ index\ (1-\/5)\ prescaler\ */}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00049}00049\ \ \ \}\ \ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00050}00050\ \ \ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00051}00051\ \ \ \textcolor{keywordflow}{return}\ error\_code;}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00063}\mbox{\hyperlink{systimer_8c_ad39420cdd896dd12c68e36313139d0a5}{00063}}\ \mbox{\hyperlink{systimer_8c_ad39420cdd896dd12c68e36313139d0a5}{ISR}}(TIMER1\_COMPA\_vect)}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00064}00064\ \{}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00065}00065\ \ \ \mbox{\hyperlink{main_8c_aa65a9752fa834bd4e970a0751afc546b}{systimer\_callback}}();}
+\DoxyCodeLine{\Hypertarget{systimer_8c_source_l00066}00066\ \}}
+
+\end{DoxyCode}

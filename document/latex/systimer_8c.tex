@@ -1,0 +1,111 @@
+\doxysection{Dokumentacja pliku Sys\+Timer/systimer.c}
+\hypertarget{systimer_8c}{}\label{systimer_8c}\index{SysTimer/systimer.c@{SysTimer/systimer.c}}
+
+
+Plik implementacyjny biblioteki Sys\+Timer.  
+
+
+{\ttfamily \#include "{}systimer.\+h"{}}\newline
+Wykres zależności załączania dla systimer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{systimer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}{systimer\+\_\+init}} (uint16\+\_\+t systick)
+\begin{DoxyCompactList}\small\item\em Funkcja pozwalajaca skonfigurowac licznik Timer1 tak by pozwalal na generacje przerwania o okreslony czas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{systimer_8c_ad39420cdd896dd12c68e36313139d0a5}{ISR}} (TIMER1\+\_\+\+COMPA\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em Funkcja przerwania od licznika Timer1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+const uint16\+\_\+t prescaler\+\_\+div\mbox{[}5\mbox{]} \mbox{\hyperlink{systimer_8c_a9c5bf500e7587316dfee0f4f05553b3f}{PROGMEM}} = \{1, 8, 64, 256, 1024\}
+\begin{DoxyCompactList}\small\item\em Tablica wartosci dzielnika czestotliwosci sygnalu zegarowego dla licznika Timer1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Plik implementacyjny biblioteki Sys\+Timer. 
+
+W pliku zawarto implementacje wszystkich funkcji biblioteki Sys\+Timer. Inicjalizacja licznika odbywa sie automatycznie w oparciu o wartosc podanego czasu -\/ interwalu pomiedzy wystapieniem kolejnych przerwan. 
+
+Definicja w pliku \mbox{\hyperlink{systimer_8c_source}{systimer.\+c}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{systimer_8c_ad39420cdd896dd12c68e36313139d0a5}\index{systimer.c@{systimer.c}!ISR@{ISR}}
+\index{ISR@{ISR}!systimer.c@{systimer.c}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily \label{systimer_8c_ad39420cdd896dd12c68e36313139d0a5} 
+ISR (\begin{DoxyParamCaption}\item[{TIMER1\+\_\+\+COMPA\+\_\+vect}]{}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja przerwania od licznika Timer1. 
+
+Funkcja obslugi przerwania od porownania licznika Timer1. Zawiera wywolanie tzw. funkcji zwrotnej, ktora zdefiniowana w aplikacji bedzie wywolywana cyklicznie co czas {\ttfamily systick}. 
+
+Definicja w linii \mbox{\hyperlink{systimer_8c_source_l00063}{63}} pliku \mbox{\hyperlink{systimer_8c_source}{systimer.\+c}}.
+
+\Hypertarget{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}\index{systimer.c@{systimer.c}!systimer\_init@{systimer\_init}}
+\index{systimer\_init@{systimer\_init}!systimer.c@{systimer.c}}
+\doxysubsubsection{\texorpdfstring{systimer\_init()}{systimer\_init()}}
+{\footnotesize\ttfamily \label{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480} 
+uint8\+\_\+t systimer\+\_\+init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{systick}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja pozwalajaca skonfigurowac licznik Timer1 tak by pozwalal na generacje przerwania o okreslony czas. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em systick} & watrosc czasu podana w \mbox{[}ms\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+zwraca kod okreslajacy, czy licznik udalo sie poprawnie skonfigurowac i z jaka dokladnoscia bedzie odmierzany czas
+\end{DoxyReturn}
+Przyklad wykorzystania 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{systimer_8h}{systimer.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ main(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{systimer_8c_ae3404ce9abc1306c155ab95ccffe8480}{systimer\_init}}(100);\ \textcolor{comment}{//\ odmierzany\ interwal\ czasu\ 100ms}}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_aa65a9752fa834bd4e970a0751afc546b}{systimer\_callback}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ tutaj\ wpisac\ instrukcje,\ ktore\ beda\ wykonywane\ co\ 100ms}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definicja w linii \mbox{\hyperlink{systimer_8c_source_l00023}{23}} pliku \mbox{\hyperlink{systimer_8c_source}{systimer.\+c}}.
+
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{systimer_8c_a9c5bf500e7587316dfee0f4f05553b3f}\index{systimer.c@{systimer.c}!PROGMEM@{PROGMEM}}
+\index{PROGMEM@{PROGMEM}!systimer.c@{systimer.c}}
+\doxysubsubsection{\texorpdfstring{PROGMEM}{PROGMEM}}
+{\footnotesize\ttfamily \label{systimer_8c_a9c5bf500e7587316dfee0f4f05553b3f} 
+const uint16\+\_\+t prescaler\+\_\+div \mbox{[}5\mbox{]} PROGMEM = \{1, 8, 64, 256, 1024\}}
+
+
+
+Tablica wartosci dzielnika czestotliwosci sygnalu zegarowego dla licznika Timer1. 
+
+Stablicowane wartosci dzielnika czestotliwosci licznika Timer1. Wartosci umieszczone jako stale w pamieci programu FLAS. 
+
+Definicja w linii \mbox{\hyperlink{systimer_8c_source_l00021}{21}} pliku \mbox{\hyperlink{systimer_8c_source}{systimer.\+c}}.
+

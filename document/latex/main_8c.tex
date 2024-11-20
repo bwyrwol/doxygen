@@ -1,0 +1,87 @@
+\doxysection{Dokumentacja pliku Sys\+Timer/main.c}
+\hypertarget{main_8c}{}\label{main_8c}\index{SysTimer/main.c@{SysTimer/main.c}}
+
+
+Plik glowny programu.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include "{}systimer.\+h"{}}\newline
+Wykres zależności załączania dla main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}~14745600\+UL
+\begin{DoxyCompactList}\small\item\em definicja czestotliwosci rezonatora kwarcowego \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_aa65a9752fa834bd4e970a0751afc546b}{systimer\+\_\+callback}} (void)
+\begin{DoxyCompactList}\small\item\em Funkcja wywolywana w programie obslugi przerwania od Timer1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Plik glowny programu. 
+
+\begin{DoxyAuthor}{Autor}
+B.\+W. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+2024/11/20 
+\end{DoxyDate}
+
+
+Definicja w pliku \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Dokumentacja definicji}
+\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\index{main.c@{main.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8} 
+\#define F\+\_\+\+CPU~14745600\+UL}
+
+
+
+definicja czestotliwosci rezonatora kwarcowego 
+
+
+
+Definicja w linii \mbox{\hyperlink{main_8c_source_l00011}{11}} pliku \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definicja w linii \mbox{\hyperlink{main_8c_source_l00019}{19}} pliku \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_aa65a9752fa834bd4e970a0751afc546b}\index{main.c@{main.c}!systimer\_callback@{systimer\_callback}}
+\index{systimer\_callback@{systimer\_callback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{systimer\_callback()}{systimer\_callback()}}
+{\footnotesize\ttfamily \label{main_8c_aa65a9752fa834bd4e970a0751afc546b} 
+void systimer\+\_\+callback (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja wywolywana w programie obslugi przerwania od Timer1. 
+
+Funkcja obslugi przerwania od porownania licznika Timer1. Zawiera wywolanie tzw. funkcji zwrotnej, ktora zdefiniowana w aplikacji bedzie wywolywana cyklicznie co czas {\ttfamily systick}. 
+
+Definicja w linii \mbox{\hyperlink{main_8c_source_l00014}{14}} pliku \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+

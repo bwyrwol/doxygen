@@ -1,0 +1,29 @@
+\doxysection{systimer.\+h}
+\hypertarget{systimer_8h_source}{}\label{systimer_8h_source}\index{SysTimer/systimer.h@{SysTimer/systimer.h}}
+\mbox{\hyperlink{systimer_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ SYSTIMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ SYSTIMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <avr/interrupt.h>}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <avr/pgmspace.h>}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ F\_CPU}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00023}\mbox{\hyperlink{systimer_8h_a43bafb28b29491ec7f871319b5a3b2f8}{00023}}\ \textcolor{preprocessor}{\#define\ F\_CPU\ 14745600UL}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00024}00024\ \textcolor{preprocessor}{\#warning\ F\_CPU\ is\ defined\ as\ 14745600UL}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00027}\mbox{\hyperlink{systimer_8h_a8a64152a767d1b6adeabe5d285552d8e}{00027}}\ \textcolor{preprocessor}{\#define\ SYSTIMER\_NO\_ERROR\ 0\ \ \ }}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00028}\mbox{\hyperlink{systimer_8h_a4f8652a3c9faffaaaa58da37b0f6b821}{00028}}\ \textcolor{preprocessor}{\#define\ SYSTIMER\_ERROR\_1\ \ 1\ \ \ }}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00029}\mbox{\hyperlink{systimer_8h_a289bae41cb0351bdbec9f06416453742}{00029}}\ \textcolor{preprocessor}{\#define\ SYSTIMER\_ERROR\_2\ \ 2\ \ \ }}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00058}00058\ uint8\_t\ \mbox{\hyperlink{systimer_8h_ae3404ce9abc1306c155ab95ccffe8480}{systimer\_init}}(uint16\_t\ systick);}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00069}00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{systimer_8h_a9964c00826959584d40ed079a871045f}{systimer\_callback}}(\textcolor{keywordtype}{void})\ \_\_attribute\_\_((weak));}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00079}00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SYSTIMER\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{systimer_8h_source_l00080}00080\ }
+
+\end{DoxyCode}
