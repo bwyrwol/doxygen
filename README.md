@@ -1,1 +1,1 @@
-# smiw-doxygen
+# doxygen
